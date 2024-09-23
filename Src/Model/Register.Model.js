@@ -16,6 +16,9 @@ const RegSchema = new Mongoose.Schema(
       require: true,
       enum: ["Student", "Intern", "Fresher"],
     },
+    Created: {
+      type: String
+    }
   },
   { timestamps: true }
 );

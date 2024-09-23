@@ -1,12 +1,15 @@
-
 const ModelReg = require("../Model/Register.Model");
-const RegController = async(req, res) => {
+const RegController = async (req, res) => {
   try {
-    let Register = await ModelReg.create(req.body)
+    let data = {
+      ...req.body,
+      Created: "Success"
+    }
+    let Register = await ModelReg.create(data);
     res.json({
-        Register,
-        message: "Registration Successful"
-    })
+      Register,
+      message: "Registration Successful",
+    });
   } catch (error) {
     res.json({
       Error: error.message,
@@ -14,5 +17,6 @@ const RegController = async(req, res) => {
   }
 };
 
-
-module.exports = RegController;
+module.exports = {
+  RegController
+};
