@@ -18,6 +18,9 @@ const RegSchema = new Mongoose.Schema(
     },
     Created: {
       type: String
+    },
+    Password: {
+      type: String,
     }
   },
   { timestamps: true }
